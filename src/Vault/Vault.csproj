@@ -33,7 +33,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IVaultDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VaultDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Inject.nuspec" />
