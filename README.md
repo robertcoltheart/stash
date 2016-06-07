@@ -1,5 +1,5 @@
 # Vault
-A simple key-value database store.
+A basic embedded key-value database store.
 
 ## Usage
 ```csharp
