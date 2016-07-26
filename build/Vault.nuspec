@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Vault</id>
+        <version>$version$</version>
+        <title>Vault</title>
+        <authors>Robert Coltheart</authors>
+        <owners>Robert Coltheart</owners>
+        <licenseUrl>https://github.com/robertcoltheart/Vault/raw/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/robertcoltheart/Vault</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A basic embedded key-value database store.</description>
+        <summary>A basic embedded key-value database store.</summary>
+        <tags>embedded database</tags>
+    </metadata>
+
+    <files>
+        <file src="Vault/bin/Release/Vault.dll" target="lib/net45" />
+        <file src="Vault/bin/Release/Vault.xml" target="lib/net45" />
+    </files>
+</package>
