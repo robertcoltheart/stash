@@ -1,11 +1,11 @@
-# Vault [![Travis](https://img.shields.io/travis/robertcoltheart/Vault.svg)](https://travis-ci.org/robertcoltheart/Vault) [![AppVeyor](https://img.shields.io/appveyor/ci/robertcoltheart/Vault.svg)](https://ci.appveyor.com/project/robertcoltheart/Vault) [![NuGet](https://img.shields.io/nuget/v/Vault.svg)](https://www.nuget.org/packages/Vault)
+# Stash [![Travis](https://img.shields.io/travis/robertcoltheart/Stash.svg)](https://travis-ci.org/robertcoltheart/Stash) [![AppVeyor](https://img.shields.io/appveyor/ci/robertcoltheart/Stash.svg)](https://ci.appveyor.com/project/robertcoltheart/Stash) [![NuGet](https://img.shields.io/nuget/v/Stash.svg)](https://www.nuget.org/packages/Stash)
 A basic embedded key-value database store.
 
 ## Usage
-Install the package from NuGet with `nuget install Vault`.
+Install the package from NuGet with `nuget install Stash`.
 
 ```csharp
-var database = new VaultDatabase();
+var database = new StashDatabase();
 
 string key = "key";
 string value = "value";
