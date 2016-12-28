@@ -22,4 +22,4 @@ database.Remove(keyBytes);
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this project.
 
 ## License
-Vault is released under the [MIT License](LICENSE)
+Stash is released under the [MIT License](LICENSE)
