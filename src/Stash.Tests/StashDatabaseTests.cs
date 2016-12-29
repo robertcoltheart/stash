@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 
-namespace Vault
+namespace Stash
 {
     [TestFixture]
-    public class VaultDatabaseTests
+    public class StashDatabaseTests
     {
         [Test]
         public void Test()

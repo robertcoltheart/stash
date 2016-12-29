@@ -1,6 +1,6 @@
-﻿namespace Vault
+﻿namespace Stash
 {
-    public class VaultDatabase : IVaultDatabase
+    public class StashDatabase : IStashDatabase
     {
         public byte[] Get(byte[] key)
         {

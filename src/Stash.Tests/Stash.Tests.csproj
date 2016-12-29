@@ -6,8 +6,8 @@
     <ProjectGuid>{8A0619F4-F7C0-47BC-869E-558B895E47FA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vault</RootNamespace>
-    <AssemblyName>Vault.Tests</AssemblyName>
+    <RootNamespace>Stash</RootNamespace>
+    <AssemblyName>Stash.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -51,12 +51,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VaultDatabaseTests.cs" />
+    <Compile Include="StashDatabaseTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Vault\Vault.csproj">
+    <ProjectReference Include="..\Stash\Stash.csproj">
       <Project>{1a6160d8-ced5-462a-8c58-02b2f6fbb5be}</Project>
-      <Name>Vault</Name>
+      <Name>Stash</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

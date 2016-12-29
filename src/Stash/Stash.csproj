@@ -7,8 +7,8 @@
     <ProjectGuid>{1A6160D8-CED5-462A-8C58-02B2F6FBB5BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vault</RootNamespace>
-    <AssemblyName>Vault</AssemblyName>
+    <RootNamespace>Stash</RootNamespace>
+    <AssemblyName>Stash</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,15 +30,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Vault.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\Stash.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IVaultDatabase.cs" />
+    <Compile Include="IStashDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VaultDatabase.cs" />
+    <Compile Include="StashDatabase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
