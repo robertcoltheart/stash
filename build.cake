@@ -13,7 +13,7 @@ var nugetApiKey = Argument("nugetapikey", EnvironmentVariable("NUGET_API_KEY"));
 var version = "0.1.0";
 
 var artifacts = Directory("./artifacts");
-var solution = File("./src/Vault.sln");
+var solution = File("./src/Stash.sln");
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
@@ -90,7 +90,7 @@ Task("Package")
     .IsDependentOn("Test")
     .Does(() => 
 {
-    NuGetPack("./build/Vault.nuspec", new NuGetPackSettings
+    NuGetPack("./build/Stash.nuspec", new NuGetPackSettings
     {
         Version = version,
         BasePath = "./src",
@@ -102,7 +102,7 @@ Task("Publish")
     .IsDependentOn("Package")
     .Does(() =>
 {
-    var package = "./artifacts/Vault." + version + ".nupkg";
+    var package = "./artifacts/Stash." + version + ".nupkg";
 
     NuGetPush(package, new NuGetPushSettings
     {

@@ -1,6 +1,6 @@
-﻿namespace Vault
+﻿namespace Stash
 {
-    public interface IVaultDatabase
+    public interface IStashDatabase
     {
         byte[] Get(byte[] key);
         void Remove(byte[] key);

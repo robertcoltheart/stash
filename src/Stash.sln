@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vault", "Vault\Vault.csproj", "{1A6160D8-CED5-462A-8C58-02B2F6FBB5BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stash", "Stash\Stash.csproj", "{1A6160D8-CED5-462A-8C58-02B2F6FBB5BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vault.Tests", "Vault.Tests\Vault.Tests.csproj", "{8A0619F4-F7C0-47BC-869E-558B895E47FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stash.Tests", "Stash.Tests\Stash.Tests.csproj", "{8A0619F4-F7C0-47BC-869E-558B895E47FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
