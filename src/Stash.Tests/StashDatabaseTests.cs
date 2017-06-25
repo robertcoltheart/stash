@@ -1,11 +1,10 @@
-﻿using NUnit.Framework;
+﻿using Xunit;
 
 namespace Stash
 {
-    [TestFixture]
     public class StashDatabaseTests
     {
-        [Test]
+        [Fact]
         public void Test()
         {
 
