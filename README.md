@@ -1,4 +1,7 @@
-# Stash [![Travis](https://img.shields.io/travis/robertcoltheart/Stash.svg)](https://travis-ci.org/robertcoltheart/Stash) [![AppVeyor](https://img.shields.io/appveyor/ci/robertcoltheart/Stash.svg)](https://ci.appveyor.com/project/robertcoltheart/Stash) [![NuGet](https://img.shields.io/nuget/v/Stash.svg)](https://www.nuget.org/packages/Stash)
+# Stash
+
+[![NuGet](https://img.shields.io/nuget/v/Stash?style=for-the-badge)](https://www.nuget.org/packages/Stash) [![Build](https://img.shields.io/github/workflow/status/robertcoltheart/Stash/build?style=for-the-badge)](https://github.com/robertcoltheart/Stash/actions?query=workflow:build) [![License](https://img.shields.io/github/license/robertcoltheart/Stash?style=for-the-badge)](https://github.com/robertcoltheart/Stash/blob/master/LICENSE)
+
 A basic embedded key-value database store.
 
 ## Usage
