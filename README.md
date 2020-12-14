@@ -5,7 +5,7 @@
 A basic embedded key-value database store.
 
 ## Usage
-Install the package from NuGet with `nuget install Stash`.
+Install the package from NuGet with `dotnet add package Stash`.
 
 ```csharp
 var database = new StashDatabase();
