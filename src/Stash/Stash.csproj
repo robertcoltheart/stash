@@ -1,17 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
     <Authors>Robert Coltheart</Authors>
-    <Company />
     <Description>A basic embedded key-value database store.</Description>
     <PackageProjectUrl>https://github.com/robertcoltheart/Stash</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/robertcoltheart/Stash/raw/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>embedded database key value</PackageTags>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
