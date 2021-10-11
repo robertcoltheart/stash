@@ -18,6 +18,10 @@ namespace Stash
             buffer = ArrayPool<byte>.Shared.Rent(capacity);
         }
 
+        public ReadOnlySpan<byte> WrittenSpan => buffer.AsSpan(0, index);
+
+        public int WrittenCount => index;
+
         public void Clear()
         {
             buffer.AsSpan(0, index).Clear();
