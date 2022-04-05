@@ -49,14 +49,9 @@ namespace Stash.Serialization
 
         public void WriteStartObject()
         {
+            Grow(4);
+
             var rootObject = currentDepth == 0;
-
-            var required = 4;
-
-            if (memory.Length - BytesPending < required)
-            {
-                Grow(required);
-            }
 
             stack.Push();
 
@@ -87,10 +82,7 @@ namespace Stash.Serialization
 
         public void WriteEndObject()
         {
-            if (memory.Length - BytesPending < 1)
-            {
-                Grow(1);
-            }
+            Grow(1);
 
             memory.Span[BytesPending++] = 0x0;
 
@@ -135,7 +127,7 @@ namespace Stash.Serialization
 
         public void WriteString(ReadOnlySpan<byte> propertyName, string value)
         {
-            Encoding.UTF8.GetBytes(value.AsSpan(), memory.Span);
+            //Encoding.UTF8.GetBytes(value.AsSpan(), memory.Span);
         }
 
         public void WriteString(string propertyName, ReadOnlySpan<char> value)
@@ -144,10 +136,7 @@ namespace Stash.Serialization
 
         public void WriteString(ReadOnlySpan<char> propertyName, ReadOnlySpan<char> value)
         {
-            if (memory.Length - BytesPending < 1)
-            {
-                Grow(1);
-            }
+            Grow(1);
 
             var output = memory.Span;
 
@@ -175,47 +164,40 @@ namespace Stash.Serialization
 
         public void WriteStringValue(ReadOnlySpan<char> value)
         {
-            var required = value.Length * 3 + 5;
-
-            if (memory.Length - BytesPending < required)
-            {
-                Grow(required);
-            }
+            Grow(value.Length * 3 + 5);
 
             var output = memory.Slice(BytesPending);
 
-            var length = Encoding.UTF8.GetBytes(value, output.Slice(4).Span) + 1;
-            BinaryPrimitives.WriteInt32LittleEndian(output.Span, length);
+            //var length = Encoding.UTF8.GetBytes(value, output.Slice(4).Span) + 1;
+            //BinaryPrimitives.WriteInt32LittleEndian(output.Span, length);
 
-            BytesPending += length + 4;
+            //BytesPending += length + 4;
             memory.Span[BytesPending - 1] = 0x0;
         }
 
         private void WriteNullTerminatedString(ReadOnlySpan<char> value)
         {
-            var required = value.Length * 3 + 1;
-
-            if (memory.Length - BytesPending < required)
-            {
-                Grow(required);
-            }
+            Grow(value.Length * 3 + 1);
 
             var output = memory.Slice(BytesPending);
 
-            var length = Encoding.UTF8.GetBytes(value, output.Span);
+            //var length = Encoding.UTF8.GetBytes(value, output.Span);
 
-            BytesPending += length;
+            //BytesPending += length;
             output.Span[BytesPending++] = 0x00;
         }
 
-        private void Grow(int requiredSize)
+        private void Grow(int required)
         {
-            bufferWriter.Advance(BytesPending);
+            if (memory.Length - BytesPending < required)
+            {
+                bufferWriter.Advance(BytesPending);
 
-            BytesCommitted += BytesPending;
-            BytesPending = 0;
+                BytesCommitted += BytesPending;
+                BytesPending = 0;
 
-            memory = bufferWriter.GetMemory(requiredSize);
+                memory = bufferWriter.GetMemory(required);
+            }
         }
     }
 }

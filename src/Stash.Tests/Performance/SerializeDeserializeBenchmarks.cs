@@ -17,7 +17,8 @@ using MongoDB.Bson.Serialization;
 
 namespace Stash.Tests.Performance
 {
-    [SimpleJob(RuntimeMoniker.Net50)]
+    // https://stackoverflow.com/questions/60478477/binary-json-format-that-supports-traversal
+    [SimpleJob(RuntimeMoniker.Net60)]
     [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByCategory)]
     public class SerializeDeserializeBenchmarks
     {
@@ -136,6 +137,12 @@ namespace Stash.Tests.Performance
 
                 return writer.GetSpan();
             }
+        }
+
+        public void SerializeSystemCbor()
+        {
+            CborWriter writer = new CborWriter();
+            writer.wr
         }
 
         [Benchmark(Baseline = true)]

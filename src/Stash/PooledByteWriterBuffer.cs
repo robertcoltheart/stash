@@ -18,6 +18,8 @@ namespace Stash
             buffer = ArrayPool<byte>.Shared.Rent(capacity);
         }
 
+        public ReadOnlyMemory<byte> WrittenMemory => buffer.AsMemory(0, index);
+
         public ReadOnlySpan<byte> WrittenSpan => buffer.AsSpan(0, index);
 
         public int WrittenCount => index;
@@ -73,7 +75,7 @@ namespace Stash
                 var growLength = Math.Max(sizeHint, buffer.Length);
                 var totalLength = buffer.Length + growLength;
 
-                if ((uint)totalLength > int.MaxValue)
+                if (totalLength >= int.MaxValue)
                 {
                     throw new OutOfMemoryException("Writer buffer exceeded maximum length");
                 }
