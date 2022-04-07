@@ -1,3 +1,4 @@
+
 # 1. Database file
 
 ## 1.1 Pages
@@ -18,7 +19,7 @@ Offset | Size | Description
 4 | 1 | Page type (Empty = 0, Header = 1, Collection = 2, Index = 3, Data = 4)
 5 | 4 | Previous page ID (max for none)
 9 | 4 | Next page ID (max for none)
-13 | 1 | The index in the free list slot, for data and index pages (255 if not in use)
+13 | 1 | The index in the free list slot, for data and index pages, 0-4 (255 if not in use)
 14 | 4 | Transaction ID
 18 | 1 | In WAL, used as the last transaction page and confirmed on disk (0 or 1)
 19 | 4 | For data pages, sets the page ID of the collection
@@ -56,8 +57,8 @@ Offset | Size | Description
 44 | 4 | Free page index 4
 48 | 4 | Free page index 5
 52 | 44 | Reserved
-96 | 1 | Number of indexes
-97 | var | Collection index blocks
+96 | 1 | Number of indexes (max 255 per collection)
+97 | var * number of indexes | Collection index blocks
 
 ## 1.4 Index page
 
@@ -85,7 +86,7 @@ Each end of the page has an array of 4-byte addresses of blocks, each containing
 Offset | Size | Description
 -- | -- | --
 0 | 2 | Length of block
-2 | 2 | Postition in page
+2 | 2 | Position in page
 
 ## 1.8 Blocks
 Blocks are contained within the page and can be of the following types:
@@ -93,7 +94,7 @@ Blocks are contained within the page and can be of the following types:
 ### 1.8.1 Data block
 Offset | Size | Description
 -- | -- | --
-0 | 1 | Block is extended (0 or 1)
+0 | 1 | Block is extended when it's the 2nd or higher page for the data (0 or 1)
 1 | 5 | Page address of next block
 5 | length | BSON data within the block
 
@@ -101,7 +102,7 @@ Offset | Size | Description
 Offset | Size | Description
 -- | -- | --
 0 | 1 | Index slot reference in collection
-1 | 1 | Skip-list level
+1 | 1 | Skip-list level (0-31)
 2 | 5 | Page address of the data block
 7 | 5 | Page address of next node
 12 | level * 5 * 2 | List of previous and next nodes (using page address) in skip list (10 bytes per pair)
